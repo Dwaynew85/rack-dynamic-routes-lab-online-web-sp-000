@@ -8,9 +8,9 @@ class Application
 
     item_name = req.params["q"]
 
-    if @@item.include?(item_name)
+    if @@items.include?(item_name)
       resp.write "The price is..."
-    elsif @@item.exclude?(item_name)
+    elsif @@items.exclude?(item_name)
       resp.write "Item not found"
       resp.status 400
     else
