@@ -12,7 +12,7 @@ class Application
       resp.write "The price is..."
     elsif @@item.exclude?(item_name)
       resp.write "Item not found"
-      resp.status 400      
+      resp.status 400
     else
       resp.write "Route not found"
       resp.status = 404
