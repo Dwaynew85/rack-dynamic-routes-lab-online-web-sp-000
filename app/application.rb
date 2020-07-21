@@ -1,10 +1,10 @@
-class Application 
+class Application
 
   @@items = ["Apples", "Pears", "Bananas"]
 
   def call(env)
     resp = Rack::Response.new
-    req = Rack::Request.new(env) 
+    req = Rack::Request.new(env)
 
   end
 end
