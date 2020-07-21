@@ -6,8 +6,13 @@ class Application
     resp = Rack::Response.new
     req = Rack::Request.new(env)
 
-    if req.path=="/items/<ITEM NAME>"
+    item_name = req.params["q"]
+
+    if @@item.include?(item_name)
       resp.write "The price is..."
+    elsif @@item.exclude?(item_name)
+      resp.write "Item not found"
+      resp.status 400      
     else
       resp.write "Route not found"
       resp.status = 404
